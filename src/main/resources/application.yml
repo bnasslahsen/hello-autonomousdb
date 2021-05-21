@@ -1,0 +1,14 @@
+spring:
+  config:
+    import: application-common.yml
+  datasource:
+    url: jdbc:oracle:thin:@helloatp_high?TNS_ADMIN=/Users/bnasslah/Wallet_helloATP
+    password: HelloDB+2021
+    username: ADMIN
+logging:
+  level:
+    com:
+      oracle:
+        oci:
+          autonomousdb:
+            samples: DEBUG

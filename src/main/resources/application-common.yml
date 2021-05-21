@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    oracleucp:
+      max-pool-size: 20
+      min-pool-size: 5
+    type: oracle.ucp.jdbc.PoolDataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+springdoc:
+  enable-native-image-support: true
+  swagger-ui:
+    use-root-path: true
