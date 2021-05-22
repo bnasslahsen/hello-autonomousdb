@@ -38,14 +38,39 @@ terraform plan
 terraform apply
 ```
 
-## Building the application with Maven
+## Building the application 
 
-We will create an OCI image from an executable jar file using Cloud Native Buildpacks (CNB).
-Images can be built using the build-image goal.
+### Option 1: Building Executable JAR with Maven
+To create an `executable jar`, simply run:
 
 ```sh
 mvn clean package
 ```
+
+### Option 1: Testing Executable JAR locally
+
+```sh
+ ava -jar target/hello-autonomousdb-0.0.1-SNAPSHOT.jar --spring.config.location=/Users/bnasslah/Documents/workspace/hello-autonomousdb/src/main/resources/
+```
+
+### Option 2: Building a non-native OCI Images
+We will create an OCI image from an executable jar file using Cloud Native Buildpacks (CNB).
+Images can be built using the build-image goal.
+
+To create a non-native OCI docker image, simply run.
+
+```sh
+mvn clean spring-boot:build-image
+```
+
+### Option 3: Building native image with GraalVM
+To create a `native image`, the project rely on spring-native project and buildpacks.
+Run the following command
+
+```sh
+mvn -Pnative-image clean spring-boot:build-image
+```
+
 
 ## Configuring the application secrets
 

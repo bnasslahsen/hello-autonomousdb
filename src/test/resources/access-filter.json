@@ -5,7 +5,7 @@
   {"excludeClasses": "org.junit.**"},
   {"excludeClasses": "org.mockito.**"},
   {"excludeClasses": "org.springframework.test.**"},
-  {"excludeClasses": "com.oracle.oci.autonomousdb.samples.test.**"},
-  {"excludeClasses": "org.springframework.boot.test.**"}
+  {"excludeClasses": "org.springframework.boot.test.**"},
+  {"excludeClasses": "com.oracle.oci.autonomousdb.samples.test.**"}
 ]
 }
