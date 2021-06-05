@@ -9,7 +9,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * @author bnasslahsen
  */
-public interface UserRepository extends JpaRepository<UserEntity, UUID> {
-
-
-}
+public interface UserRepository extends JpaRepository<UserEntity, UUID> {}

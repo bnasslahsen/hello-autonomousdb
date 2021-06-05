@@ -4,6 +4,23 @@
 The demo shows how you can integrate a spring-boot cloud native application with Oracle autonomous DB.
 You will be able to run this application from Your IDE or you can deploy it in Oracle Cloud Infrastructure.
 
+# Protecting your database credentials with OCI Vault 
+
+OCI Vault is a Centralized and customer controlled key management.
+It is: 
+- natively integrated to many OCI services – Autonomous, Exadata, Object Storage and others
+- Fully managed
+- highly available service
+- Support regulatory compliance: Meets PCI DSS and FIPS 140-2 Level 3 standard for cryptographic processing
+
+Hardcoding the database credentials in the configuration files might be acceptable for less critical environements like local developer station.
+On the other hand, using a Secret Manager is number 1 security best practice for protecting any sensitive information (example, DB credentials for a production environment):
+- Store and retrieve any sensitive information
+- Encrypted using keys from Vault
+
+Using Secret management in OCI Vault, is completely free. 
+We will see it's easy to integrate with spring-boot application using oci-sdk.
+
 # Running the application in your I.D.E
 
 ## Pre-requisites
@@ -109,7 +126,8 @@ cd
 ./deploy-app.sh
 ```
 
-scp -r /Users/bnasslah/Documents/workspace/hello-autonomousdb opc@129.159.249.139:/home/opc
+scp -r opc@130.61.203.164:/opt/apache-maven-3.6.3.zip .
+
 
 scp -r opc@129.159.249.139:/home/opc/hello-autonomousdb .
 rm -rf src/test/resources/application.yml
@@ -124,8 +142,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-ee-java8-21.1.0/Contents/Home
 
-
-
 java -Dspring.profiles.active=oci -Dspring.config.location=src/main/resources/ -agentlib:native-image-agent=access-filter-file=src/test/resources/access-filter.json,config-output-dir=src/main/resources/META-INF/native-image/ -jar target/hello-autonomousdb-0.0.1-SNAPSHOT.jar
 
 
@@ -133,3 +149,13 @@ java -Dspring.profiles.active=oci -Dspring.config.location=src/main/resources/ -
 
 
 mvn -Pnative-image clean package -Dspring.profiles.active=oci
+
+mvn -Pnative-image clean spring-boot:build-image
+
+
+mvn -Pnative-image clean package jib:build
+
+docker build -t springdoc-openapi-spring-boot-2-webflux -f springdoc-openapi-spring-boot-2-webflux/Dockerfile .
+
+scp -r /Users/bnasslah/Documents/workspace/hello-autonomousdb opc@129.159.201.215:/home/opc
+

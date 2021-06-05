@@ -9,6 +9,5 @@ spring:
       ddl-auto: update
     open-in-view: false
 springdoc:
-  enable-native-image-support: true
   swagger-ui:
     use-root-path: true
