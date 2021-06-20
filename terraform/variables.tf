@@ -8,11 +8,11 @@ variable fingerprint {
 }
 
 variable tenancy_ocid {
-  default = "ocid1.tenancy.oc1..aaaaaaaaqgkxttllzbr2ubzgmwc52o4bbgsukswrasydemspwdhgek4i45zq"
+  default = "ocid1.tenancy.oc1..aaaaaaaadmahkikgyoowetdmorjokz3qpu6kcdbwdhcgtpq7dwww3anyotuq"
 }
 
 variable user_ocid {
-  default = "ocid1.user.oc1..aaaaaaaabmxyqwtm57vzsslhen6zemjmr6hr5masolwhfq7ugmn6fjnj7pjq"
+  default = "ocid1.user.oc1..aaaaaaaaovy3nrs6axlupogssiza37665j7caalh5gnubokp4tidc6bxuvha"
 }
 
 variable private_key_path {
@@ -20,7 +20,7 @@ variable private_key_path {
 }
 
 variable compartment_ocid {
-  default = "ocid1.compartment.oc1..aaaaaaaawv7ydwkdkpebps24g2rvbb3znq3xfcdmuv4btnqs5vqiegcd6i6q"
+  default = "ocid1.compartment.oc1..aaaaaaaa2iuscidsjmkacs3au4ycrc4ge6tbkfjjspiluvvm4gt67q2uh3ea"
 }
 
 variable db_name {
