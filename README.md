@@ -46,6 +46,28 @@ Test the access to the application: http://localhost:8080/.
 - You have setup the link:https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm[required keys]
 - You know the link:https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five[required OCIDs]
 
+## Terraform configuration
+
+Obtain the necessary OCIDs. You can follow the documentation for link:https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#five[obtaining the tenancy and user ocids]
+
+The following OCIDs are required:
+
+1. Compartment OCID
+2. Tenancy OCID
+3. User OCI
+
+Set mandatory parameters of variables.tf:
+- `region` : Region of the tenant.
+- `tenancy_ocid`: OCID of the tenant.
+- `user_ocid`: User OCID. This user will be creating the different resources in O.C.I.
+- `fingerprint`: Fingerprint of your API KEY.
+- `private_key_path` : The path of your private key. This property is not mandatory, if you are using the Resource Manager.
+Set optional parameters of variables.tf:
+- `db_name`: The ATP database name
+- `db_password`: The ATP database password
+-`oke_cluster_name`: The name of your kubernetes cluster
+
+
 ## Provisioning the infrastructure with Terraform
 
 After following the configuration steps:
@@ -99,17 +121,8 @@ The dbpassword environment variable is read and set as the password unless and v
 
 Let’s also look at the microservice source file OrderResource.java.
 
-### Deploying the
-
-Secrets PropertySource
-Kubernetes has the notion of Secrets for storing sensitive data such as passwords, OAuth tokens, and so on. 
-This project provides integration with Secrets to make secrets accessible by Spring Boot applications.
-You can explicitly enable or disable This feature by setting the spring.cloud.kubernetes.secrets.enabled property.
-
-
 
 ### Deploying the
-
 
 The Auth Token must first be manually created and stored in OCI Secret in Vault.
 It will subsequently be used to create a Kubernetes secret, which can then be used as an imagePullSecrets in a deployment. 

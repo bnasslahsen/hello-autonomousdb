@@ -9,7 +9,7 @@ resource "oci_containerengine_cluster" "okell_cluster" {
   }
   kubernetes_version = "v1.19.7"
   name               = var.oke_cluster_name
-  kms_key_id = var.app_vault_key
+  kms_key_id = oci_kms_key.app_vault_key.id
   vcn_id             = oci_core_vcn.okell_vcn.id
   #Optional
   options {

@@ -19,13 +19,8 @@ variable private_key_path {
   default = "/Users/bnasslah/.oci/oci_api_key.pem"
 }
 
-## Compartment name
 variable compartment_ocid {
   default = "ocid1.compartment.oc1..aaaaaaaawv7ydwkdkpebps24g2rvbb3znq3xfcdmuv4btnqs5vqiegcd6i6q"
-}
-
-variable operator_timezone {
-  default ="Europe/Paris"
 }
 
 variable db_name {
@@ -34,10 +29,6 @@ variable db_name {
 
 variable db_password {
   default = "HelloDB+2021"
-}
-
-variable app_vault_key {
-  default = "ocid1.key.oc1.eu-frankfurt-1.bjqjh77haafak.abtheljs4gf2iuvsjjyp4biughl5tft7mxgwvup2l262ao27k7g6dlt3yvfq"
 }
 
 variable oke_cluster_name {

@@ -8,6 +8,7 @@ resource oci_database_autonomous_database hello_db {
   db_workload = "OLTP"
   admin_password = var.db_password
   display_name = var.db_name
+  kms_key_id = oci_kms_key.app_vault_key.id
   is_auto_scaling_enabled = "true"
   is_data_guard_enabled = "false"
   is_dedicated = "false"
