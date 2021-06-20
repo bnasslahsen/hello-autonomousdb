@@ -3,20 +3,8 @@ variable region {
   default = "eu-frankfurt-1"
 }
 
-variable fingerprint {
-  default = "80:4d:5d:d1:87:b0:2b:09:9a:95:b6:5a:08:35:80:0b"
-}
-
 variable tenancy_ocid {
   default = "ocid1.tenancy.oc1..aaaaaaaadmahkikgyoowetdmorjokz3qpu6kcdbwdhcgtpq7dwww3anyotuq"
-}
-
-variable user_ocid {
-  default = "ocid1.user.oc1..aaaaaaaaovy3nrs6axlupogssiza37665j7caalh5gnubokp4tidc6bxuvha"
-}
-
-variable private_key_path {
-  default = "/Users/bnasslah/.oci/oci_api_key.pem"
 }
 
 variable compartment_ocid {

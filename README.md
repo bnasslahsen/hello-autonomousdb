@@ -59,9 +59,6 @@ The following OCIDs are required:
 Set mandatory parameters of variables.tf:
 - `region` : Region of the tenant.
 - `tenancy_ocid`: OCID of the tenant.
-- `user_ocid`: User OCID. This user will be creating the different resources in O.C.I.
-- `fingerprint`: Fingerprint of your API KEY.
-- `private_key_path` : The path of your private key. This property is not mandatory, if you are using the Resource Manager.
 Set optional parameters of variables.tf:
 - `db_name`: The ATP database name
 - `db_password`: The ATP database password
