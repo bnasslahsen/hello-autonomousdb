@@ -86,7 +86,7 @@ mvn clean package
 ### Option 1: Testing Executable JAR locally
 
 ```sh
- ava -jar target/hello-autonomousdb-0.0.1-SNAPSHOT.jar --spring.config.location=/Users/bnasslah/Documents/workspace/hello-autonomousdb/src/main/resources/
+ java -jar target/hello-autonomousdb-0.0.1-SNAPSHOT.jar --spring.config.location=/Users/bnasslah/Documents/workspace/hello-autonomousdb/src/main/resources/
 ```
 
 ### Option 2: Building a non-native OCI Images
@@ -136,36 +136,8 @@ cd
 ./deploy-app.sh
 ```
 
-scp -r opc@130.61.203.164:/opt/apache-maven-3.6.3.zip .
-
-
-scp -r opc@129.159.249.139:/home/opc/hello-autonomousdb .
-rm -rf src/test/resources/application.yml
-
-mvn clean compile test -Dspring.profiles.active=oci
-
-mvn clean package -Dspring.profiles.active=oci
-
-export JAVA_HOME=/home/opc/graalvm-ee-java8-21.1.0
-export PATH=/home/opc/apache-maven-3.8.1/bin:$PATH
-export PATH=$JAVA_HOME/bin:$PATH
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-ee-java8-21.1.0/Contents/Home
-
-java -Dspring.profiles.active=oci -Dspring.config.location=src/main/resources/ -agentlib:native-image-agent=access-filter-file=src/test/resources/access-filter.json,config-output-dir=src/main/resources/META-INF/native-image/ -jar target/hello-autonomousdb-0.0.1-SNAPSHOT.jar
-
-
 ## Deploying the application to Kubernetes using buildpacks with native images
 
-
-mvn -Pnative-image clean package -Dspring.profiles.active=oci
-
+```java
 mvn -Pnative-image clean spring-boot:build-image
-
-
-mvn -Pnative-image clean package jib:build
-
-docker build -t springdoc-openapi-spring-boot-2-webflux -f springdoc-openapi-spring-boot-2-webflux/Dockerfile .
-
-scp -r /Users/bnasslah/Documents/workspace/hello-autonomousdb opc@129.159.201.215:/home/opc
-
+```
