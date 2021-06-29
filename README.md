@@ -25,7 +25,6 @@ We will see it's easy to integrate with spring-boot application using oci-sdk.
 
 ## Pre-requisites
 An autonomous Database should be already Provisioned on Oracle cloud.
-You can follow these steps for more details: //TODO.
 ## Application configuration
 Simply replace the following properties with your own configuration:
 ## Application execution
