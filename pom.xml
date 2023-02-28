@@ -38,8 +38,8 @@
 		<!-->Oracle DB Drivers<!-->
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ojdbc8-production</artifactId>
-			<version>${oracle-driver.version}</version>
+			<artifactId>ojdbc11-production</artifactId>
+			<version>21.9.0.0</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.oracle.database.ha</groupId>

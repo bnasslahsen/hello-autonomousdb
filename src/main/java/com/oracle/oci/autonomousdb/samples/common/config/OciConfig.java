@@ -1,31 +1,28 @@
 package com.oracle.oci.autonomousdb.samples.common.config;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author bnasslahsen
- */
-@Data
-@NoArgsConstructor
-@ConfigurationProperties(prefix = "oci.tenant")
-@Configuration(proxyBeanMethods=false)
+@Configuration
+@ConfigurationProperties(prefix = "oci.tenant.vault")
 public class OciConfig {
 
-	private String region;
+    private String dbUsernameOcid;
+    private String dbPasswordOcid;
 
-	private Vault vault= new Vault();
+    public String getDbUsernameOcid() {
+        return dbUsernameOcid;
+    }
 
-	@Data
-	@NoArgsConstructor
-	public static class Vault {
+    public void setDbUsernameOcid(String dbUsernameOcid) {
+        this.dbUsernameOcid = dbUsernameOcid;
+    }
 
-		private String dbUsernameOcid;
+    public String getDbPasswordOcid() {
+        return dbPasswordOcid;
+    }
 
-		private String dbPasswordOcid;
-	}
-
+    public void setDbPasswordOcid(String dbPasswordOcid) {
+        this.dbPasswordOcid = dbPasswordOcid;
+    }
 }
