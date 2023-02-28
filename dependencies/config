@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaa5ypkqm736yc3kgpz26m62jrhlmgcvfoxrqza2hg4jcgnfci2qkyq
+fingerprint=98:91:f4:d2:5a:b4:11:b4:2b:7b:e2:69:21:55:30:2d
+tenancy=ocid1.tenancy.oc1..aaaaaaaavl2ndgiiefoo2u4a7atlq2czcwyiu5zzb6rzwwpeyt5o2xmtaxwa
+region=sa-santiago-1
+key_file=/root/.oci/api

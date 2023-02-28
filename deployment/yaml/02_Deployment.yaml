@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: samplespringboot-deployment
+  namespace: samplespringboot
+  labels:
+    app: samplespringboot-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: samplespringboot-deployment
+  template:
+    metadata:
+      labels:
+        app: samplespringboot-deployment
+    spec:
+      containers:
+      - name: samplespringboot
+        image: sa-santiago-1.ocir.io/idlhjo6dp3bd/samplespringboot:latest
+        imagePullPolicy: Always
+        # envFrom:
+        #   - secretRef:
+        #       name: samplespringboot-env-secrets
+        ports:
+        - containerPort: 8080
+        # resources:
+        #   limits:
+        #     cpu: 50m
+        #   requests:
+        #     cpu: 20m
+      imagePullSecrets:
+        - name: samplespringboot-ocir-secret

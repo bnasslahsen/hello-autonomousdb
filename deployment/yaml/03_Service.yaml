@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: samplespringboot-app-service
+  namespace: samplespringboot
+  labels:
+    app: samplespringboot-deployment
+spec:
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: samplespringboot-deployment

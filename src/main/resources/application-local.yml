@@ -2,7 +2,7 @@ spring:
   config:
     import: application-common.yml
   datasource:
-    url: jdbc:oracle:thin:@adbspringboot_high?TNS_ADMIN=/root/.oci/wallet   
+    url: jdbc:oracle:thin:@adbspringboot_high?TNS_ADMIN=/root/app/wallet  
   profiles:
     active: oci
 oci:

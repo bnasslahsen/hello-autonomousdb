@@ -1,0 +1,7 @@
+.gitignore
+mvnw.cmd
+README.md
+Dockerfile
+/deployment/*
+.vscode
+img
