@@ -30,6 +30,6 @@ import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.stereotype.Component;
 
 @OpenAPIDefinition(info = @Info(title = "Users API",
-		description = "Demo Spring Boot with Oracle Autonomous DB", version = "v1.0"))
+		description = "Demo Spring Boot with Oracle Autonomous DB with credentials from OCI Vault", version = "v1.0"))
 @Component
 public class OpenApiConfig {}

@@ -1,0 +1,14 @@
+spring:
+  config:
+    import: application-common.yml
+  datasource:
+    url: jdbc:oracle:thin:@adbspringboot_high?TNS_ADMIN=/home/ubuntu/REPOS/wallet
+    password: W3lc0m31.2023
+    username: ADMIN
+logging:
+  level:
+    com:
+      oracle:
+        oci:
+          autonomousdb:
+            samples: DEBUG
